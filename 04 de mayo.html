@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Esencia y Ciencia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --verde-botanico: #4B7B4E;
+      --blanco-suave: #F8F8F5;
+      --verde-menta: #CDE3D3;
+      --dorado-natural: #D4AF37;
+      --gris-piedra: #707070;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+      background-color: var(--blanco-suave);
+      color: var(--gris-piedra);
+      padding: 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+
+    h1 {
+      color: var(--verde-botanico);
+      margin-top: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background-color: var(--verde-menta);
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .modal-content {
+      background: var(--blanco-suave);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--dorado-natural);
+      border: none;
+      border-radius: 50%;
+      width: 30px; height: 30px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    form {
+      margin-top: 3rem;
+      background-color: var(--verde-botanico);
+      padding: 2rem;
+      border-radius: 1rem;
+      color: white;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    form h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--dorado-natural);
+    }
+
+    form input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+    }
+
+    form button {
+      width: 100%;
+      background: var(--dorado-natural);
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .card img {
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://github.com/Carmanzuba/imagenes_proyecto/blob/main/portada3_modificada.png?raw=true" alt="Portada Esencia y Ciencia" />
+  <h1>Esencia y Ciencia</h1>
+  <p>Bienestar natural, salud consciente 🌿</p>
+</header>
+
+<section class="grid" id="cards-container">
+  <!-- Tarjetas generadas por JS -->
+</section>
+
+<!-- Modal -->
+<div class="modal" id="infoModal">
+  <div class="modal-content">
+    <button class="close" onclick="cerrarModal()">×</button>
+    <h2 id="modalTitle"></h2>
+    <p id="modalContent"></p>
+  </div>
+</div>
+
+<!-- Formular
